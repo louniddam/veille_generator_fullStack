@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Londrina+Outline&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style/index.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div>
+            <h1>My Tech-Watch Assignator</h1>
+        </div>
+        <nav>
+            <button class="btn btn1 btn-color"><a href="http://localhost:8000/page_assign">Tech-Watch Assignation</a></button>
+            <button class="btn btn-color"><a href="http://localhost:8000/page_history">History Tech-Watch</a></button>
+            <button class="btn btn3 btn-color"><a href="http://localhost:8000/page_stud">Student list</a></button>
+        </nav>
+    </header>
+    <section class="instructions">
+        <h2>Welcome Tech-Watch User!</h2>
+        <div class="text_instructions">
+            <p>On this page you could take a look to the next tech-watch we will assist. You can find witch students will have to do the next
+                presentation and when. </p> <br>
+            <p>Also, as you can see, above this section there is a menu. This menu offer you diverse options like: take a look about the tech-watch we
+                had already assist; see the list of students availaible for do a tech-watch; a page for create the next tech-watch. </p> <br>
+            <p>Don’t be shy and try to go on diverses part of the website !</p>
+        </div>
+    </section>
+    <section>
+        <div class="watch">
+            
+            <div class="contentWatch">
+                <h3> <%= arrayOfWatch[0].subject %> </h3>
+                <div class="spacing">
+                    <p>Students Affiliate: Hakim -- Camille</p>
+                    <p>When: <%= arrayOfWatch[0].date %></p>
+                </div>
+            </div>
+            <div class="contentWatch">
+                <h3> <%= arrayOfWatch[1].subject %> </h3>
+                <div class="spacing">
+                    <p>Students Affiliate: Hakim -- Camille</p>
+                    <p>When: <%= arrayOfWatch[1].date %></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="next_stud">
+        <h3>List of students they will must do a tech-watch soon:</h3>
+        <ul>
+            <% for (var i = 0; i < arrayOfStud.length; i++) { %>
+                <li> <%= arrayOfStud[i] %> </li>
+            <% } %>
+        </ul>
+    </section>
+    <footer>
+        <p>Copyright: Alban Meurice & Thomas Jamais</p>
+        <p>Contact: korvin.meurice@gmail.com <br> thomas.jamais95@gmail.com</p>
+    </footer>
+    <script src="/serv.js"></script>
+</body>
+</html>

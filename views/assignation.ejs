@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Londrina+Outline&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style/assignation.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div>
+            <h1>My Tech-Watch Assignator</h1>
+        </div>
+        <nav>
+            <button class="btn btn1 btn-color"><a href="http://localhost:8000/page_index">Home</a></button>
+            <button class="btn btn-color"><a href="http://localhost:8000/page_history">History Tech-Watch</a></button>
+            <button class="btn btn3 btn-color"><a href="http://localhost:8000/page_stud">Student list</a></button>
+        </nav>
+    </header>
+    <section class="watch">
+        <h1>Next Tech-Watch</h1>
+        <div class="next_watch">
+            <% for (var i = 0; i < 2; i++) { %>
+                <div class="contentWatch">
+                    <h3> <%= arrayOfWatch[i].subject %> </h3>
+                    <div class="spacing">
+                        <p>Students Affiliate: Hakim -- Camille</p>
+                        <p>When:  <%= arrayOfWatch[i].date %></p>
+                    </div>
+                </div>
+            <% } %>
+        </div>
+        
+    </section>
+    <section class="form">
+        <h1>Add Tech-Watch</h1>
+        <form action="/newWatch" method="post">
+            <div class="col_form">
+               <p>Subject:</p> 
+               <input type="text" name="subject" id="" class="input1">
+            </div>
+            <div class="col_form">
+                <p>Deadline:</p>
+               <input type="text" name="date" id="" class="input1">
+            </div>
+            <div class="col_form">
+                <p>Number students</p>
+                <select id="del_name" name="choose_name" class="input1" >
+                    <% for (var i = 0; i < arrayOfWatch.length; i++) { %>
+                        <option value=<%= arrayOfWatch[i] %>> <%= [i+1] %> </option>
+                    <% } %>
+                  </select>
+            </div>
+            <div class="col_form">
+                <button type="submit">Create Tech-Watch</button>
+            </div>
+        </form>
+    </section>
+    <footer>
+        <p>Copyright: Alban Meurice & Thomas Jamais</p>
+        <p>Contact: korvin.meurice@gmail.com <br> thomas.jamais95@gmail.com</p>
+    </footer>
+    <script src="/serv.js"></script>
+</body>
+</html>

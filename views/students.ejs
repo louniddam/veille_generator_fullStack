@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Londrina+Outline&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style/students.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div>
+            <h1>My Tech-Watch Assignator</h1>
+        </div>
+        <nav>
+            <button class="btn btn1 btn-color"><a href="http://localhost:8000/page_index">Home</a></button>
+            <button class="btn btn-color"><a href="http://localhost:8000/page_history">History Tech-Watch</a></button>
+            <button class="btn btn3 btn-color"><a href="http://localhost:8000/page_assign">Tech-Watch Assignation</a></button>
+        </nav>
+    </header>
+    <section class="list">
+        <h1>List of students</h1>
+        <ul>
+            <% for (var i = 0; i < arrayOfStud.length; i++) { %>
+                <li> <%= arrayOfStud[i] %> </li>
+            <% } %>
+        </ul>
+    </section>
+
+    <section class="form_well">
+        <form action="/studentsPost" class="form_1" method="POST">
+            <p class="txt">Add student</p> 
+            <input type="text" id="input_name" autocomplete="off" class="input1" name="name">
+            <button class="btn_form" type="submit">Add Student</button>
+        </form>
+        
+        <form action="/delStudName" class="form_2" method="POST">
+            <p class="txt">Delete student</p>
+            <div class="lol">
+                <select id="del_name" name="del_name" class="input1" >
+                    <% for (var i = 0; i < arrayOfStud.length; i++) { %>
+                        <option value=<%= arrayOfStud[i] %>> <%= arrayOfStud[i] %> </option>
+                    <% } %>
+                  </select>
+            </div>
+            <button class="btn_form" type="submit">Delete Student</button>
+        </form>
+    </section>
+    <footer>
+        <p>Copyright: Alban Meurice & Thomas Jamais</p>
+        <p>Contact: korvin.meurice@gmail.com <br> thomas.jamais95@gmail.com</p>
+    </footer>
+    <script src="/serv.js"></script>
+</body>
+</html>

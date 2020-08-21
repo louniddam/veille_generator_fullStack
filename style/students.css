@@ -1,0 +1,158 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+/*HEADER*/
+
+h1{
+font-size: 3.5em;
+margin-top: 10px;
+color: white;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header div{
+    text-align: center;
+    height: 15vh;
+    background-color:#4F78C5;
+    width: 100%;
+}
+
+header nav{
+    height: 15vh;
+    background-color: #D29856; 
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header nav a{
+    text-decoration: none;
+    color: #AD793E; 
+
+}
+
+.btn{
+    border: none;
+    width: 17vw;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 15px;
+}
+
+.btn-color{
+    background-color: white; 
+    border: 2px solid black;
+}
+
+
+/**********************************/
+
+
+/*SECTION list*/
+.list{
+    height: 50vh;
+    background-color: white;
+    color: #D29856;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.list h1{
+    color: #D29856;
+    font-size: 2.5em;
+    font-weight: 200;
+}
+
+.list ul {
+    width: 70vw;
+    columns: 3;
+    font-size: 1.4em;
+    list-style-type: '-';
+    border: solid 2px #D29856;
+    border-radius: 10px;
+}
+
+.list ul li{
+    margin-left: 6vw;
+    padding: 10px;
+
+}
+
+/*SECTION form*/
+.form_well{
+    height: 35vh;
+    background-color: #D29856;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.form_well form{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.txt {
+    margin-right: 10vw;
+    font-weight: 200;
+    font-size: 1.5em;
+}
+
+
+.btn_form {
+    border: none;
+    width: 16vw;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 15px;
+    color: #AD793E; 
+    background-color: white;
+    border: 2px solid black;
+    margin-left: 10vw;
+
+}
+
+.input1{
+    width: 40vw;
+    border-radius: 5px;
+    height: 4vh;
+}
+
+
+/*FOOTER*/
+footer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 15vh;
+    background-color: #4F78C5;
+    color: white;
+}

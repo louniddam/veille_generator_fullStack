@@ -1,0 +1,140 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+/*HEADER*/
+
+h1{
+font-size: 3.5em;
+margin-top: 10px;
+color: white;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header div{
+    text-align: center;
+    height: 15vh;
+    background-color:#4F78C5;
+    width: 100%;
+}
+
+header nav{
+    height: 15vh;
+    background-color: #D29856; 
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header nav a{
+    text-decoration: none;
+    color: #AD793E; 
+
+}
+
+.btn{
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 15px;
+    width: 17vw;
+}
+
+.btn-color{
+    background-color: white; 
+    border: 2px solid black;
+}
+
+
+/**********************************/
+
+/*SECTION futur_watch*/
+.futur_watch{
+    color:  #D29856;
+    background-color: white ; 
+    height: 55vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.futur_watch h1{
+    color: #D29856;
+}
+
+.next_watch{
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.contentWatch{
+    background-color: white;
+    color: #AD793E;
+    width: 70vw;
+    height: 15vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 10px;
+    border: 2px black solid;
+}
+
+.contentWatch h3{
+    text-decoration: underline;
+}
+
+.spacing{
+    width: 65vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+/*SECTION past_watch*/
+.past_watch{
+    color:  white;
+    background-color:#D29856; 
+    height: 55vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.past_watch h1{
+    color: white;
+}
+/*FOOTER*/
+footer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 15vh;
+    background-color: #4F78C5;
+    color: white;
+}
