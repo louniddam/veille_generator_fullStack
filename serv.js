@@ -4,6 +4,8 @@ const fetch = require('node-fetch');
 const app = express();
 let arrayOfStud = [];
 let arrayOfWatch = [];
+let arrayOfRandomStud = [];
+let randomStud = [];
 
 //EJS
 const ejs = require('ejs');
@@ -34,12 +36,34 @@ async function findWatch(){
     }
 }
 
+async function random(){
+    var rand = arrayOfRandomStud[Math.floor(Math.random() * arrayOfRandomStud.length)];
+    return rand;
+}
+
+async function random_stud(nb, arr){
+    nb = req.body.number;
+    var randomStud = [];
+    for(i = 0; i < nb; i++){
+        random();
+        randomStud.push(rand);
+        var index = arr.indexOf(rand.name);
+        if (index > -1) {
+          arr.splice(index, 1);
+        }
+    }
+    return randomStud;
+}
+
+
+
 const main = async () =>{
     try {
 
         app.use(express.urlencoded({extended: true})); 
 
-       app.get('/', (req, res)=>{
+       app.get('/', async (req, res)=>{
+        random_stud(2);
            console.log('Vous êtes a la racine');
        });
 
@@ -103,6 +127,8 @@ const main = async () =>{
 
         //POST a Watch
         app.post('/newWatch', async (req,res)=>{
+            let group =  random_stud(req.body.number, arrayOfStud);
+            // randomStud;
             await fetch('http://localhost:3000/newWatch', {
                 method: 'POST',
                 headers: {
@@ -111,7 +137,7 @@ const main = async () =>{
                 body: JSON.stringify({
                     subject: req.body.subject,
                     date: req.body.date,
-                    number: req.body.number
+                    number: group
                 })
             });
             res.redirect('http://localhost:8000/page_assign');

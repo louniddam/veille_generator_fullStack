@@ -9,20 +9,6 @@ api.use(express.urlencoded({extended: true}));//Décoder le body de REQ.
 api.use(express.json());
 
 
-async function delStud(e){
-    let client;
-    try {
-
-     client = await  MongoClient.client(URL_MONGODB, {useUnifiedTopology: true});
-     let db = client.db('veille_generator');
-     await db.collection('students').deleteOne({name: e});
-    } catch (error) {
-        console.log(error);
-    } finally{
-        client.close();
-    }
-}
-
 const main = async () =>{
     try {
         //Me connecter à la DB
@@ -71,11 +57,10 @@ const main = async () =>{
         //Post a Watch
         api.post('/newWatch',(req,res)=>{
             res.status(200);
-            console.log(req.body);
             let watch = {
                 subject: req.body.subject,
                 date: req.body.date,
-                number: req.body.number,
+                group: req.body.number,
                 statut: 'undone'
             };
             db.collection('watch').insertOne(watch, (err,result)=>{
